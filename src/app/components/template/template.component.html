@@ -1,0 +1,38 @@
+<div fxLayout="row wrap" fxLayoutAlign="center start" fxShow="true" fxHide="false" fxFill>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" fxFlex.xs="95" fxFlex.sm="90" fxFlex.md="80" fxFlex.gt-md="75">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" fxShow="true" fxHide="false">
+      <div fxLayout="column wrap" style="margin-top: 20px;" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" *ngFor="let item of data; let i = index;" fxFlex.gt-md="22" fxFlex.md="30" fxFlex.sm="47" fxFlex.xs="100">
+        <div fxLayout="row wrap" fxLayoutAlign="center start" fxShow="true" fxHide="false" fxFill>
+          <mat-card style="width: 100%;">
+            <div fxLayout="column wrap" fxLayoutGap="20px" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+              <div fxLayout="row wrap" style="background-color: beige;" fxLayoutAlign="center stretch" fxShow="true" fxHide="false">
+                <p class="card-heading">{{item.name}}</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxShow="true" fxHide="false"> <img class="img-size" src="../../../assets/mobile1.jpeg"></div>
+              <div fxLayout="row wrap" style="background-color: #00fffd5e;color: black;    padding: 5px;" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="15px" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                  <div fxLayout="row wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                    <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                      <p class="lable-heading ">Price</p>
+                    </div>
+                    <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                      <p class="lable-heading ">{{item.price}}</p>
+                    </div>
+                  </div>
+                  <div fxLayout="row wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                    <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                      <p class="lable-heading ">Model</p>
+                    </div>
+                    <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+                      <p class="lable-heading ">{{item.model}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

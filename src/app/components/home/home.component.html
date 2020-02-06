@@ -1,0 +1,51 @@
+<div fxLayout="row wrap" style="height:56px;padding:0 10px" class="{{changeClass()}}" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+  <div fxLayout="column wrap" fxFlex="15" fxLayoutAlign="center stretch" fxShow="true" fxHide.gt-sm="true"><i class="material-icons" (click)="sidenav.toggle()">
+      menu
+    </i></div>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" fxFlex.gt-sm="30" fxFlex.lt-md="70"><img style="height: 56px;" src="../../../assets/gimg.png"></div>
+  <div fxLayout="row wrap" fxFlex="60" fxLayoutGap="30px" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" fxHide.lt-md="true">
+    <div fxLayout="column wrap" fxLayoutAlign="center center" fxShow="true" fxHide="false" [ngClass]="{'header-menu': activeRout(item.path),'in-active': !activeRout(item.path)}" *ngFor="let item of menu;let i = index;"  (click)="selectMenu(item,i)">{{item.name}}</div>
+  </div>
+  <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="center end" fxShow="true" fxHide="false"><i class="material-icons" style="cursor:pointer" (click)="isDark = !isDark">
+      {{isDark?'lens':'panorama_fish_eye'}}
+    </i></div>
+</div>
+<div fxLayout="row wrap" style="height:56px;padding:0 10px" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" *ngIf="false">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" fxShow="true" fxHide="false"></div>
+</div>
+<mat-sidenav-container style="margin-top: 56px;" fullscreen>
+  <div fxLayout="column " fxFlex="100" fxLayoutAlign="start stretch" fxShow="true" fxHide="false" fxFill>
+    <div fxLayout="row wrap" style="overflow-y: auto; background-image: linear-gradient(0deg, #ffae0080, #abff0036);" fxFlex="calc(100% - 128px)" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+      <router-outlet></router-outlet>
+    </div>
+    <div fxLayout="row wrap" class="{{changeClass()}}" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+        <p>Footer</p>
+      </div>
+    </div>
+  </div>
+  <mat-sidenav #sidenav style="width:200px;" [mode] (toggle)="sidenav.toggle()" [position]>
+    <div fxLayout="column wrap" class="{{changeClass()}}" fxLayoutAlign="space-between stretch" fxShow="true" fxHide="false" fxFill>
+      <div fxLayout="column wrap" fxLayoutGap="15px" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+        <div fxLayout="column wrap" style="    padding: 10px 0;" class="menu-item" fxLayoutAlign="start start" fxShow="true" fxHide="false" [ngClass]="{'selected-menu': activeRout(item.path)}" *ngFor="let item of menu;let i = index;" (click)="selectMenu(item,i)">
+          <div fxLayout="row wrap" style="padding: 0 15px;" fxLayoutGap="15px" fxLayoutAlign="center start" fxShow="true" fxHide="false">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" fxShow="true" fxHide="false"><i class="material-icons">
+                {{item.icon}}
+              </i></div>
+            <div fxLayout="column wrap" style="padding: 2px 0;" fxLayoutAlign="start stretch" fxShow="true" fxHide="false">
+              <p style="margin: 0px; font-size: 17px;">{{item.name}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" style="    border-top: 1px solid #cccccc;     background-color: #ffe4c457;" fxLayoutAlign="center stretch" fxShow="true" fxHide="false">
+        <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxShow="true" fxHide="false">
+          <p style="margin:0px">User Name</p>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxShow="true" fxHide="false">
+          <p style="margin:0px">Version 1.0.0</p>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>
